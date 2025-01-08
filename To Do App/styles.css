@@ -1,0 +1,524 @@
+:root {
+    --background: #000430;
+    --secondaryBackground: #171c48;
+    --text: #fff;
+    --purple: #828dff;
+    --teal: #24feee;
+  }
+
+  body[data-theme="light"] {
+    --background: #f5f5f5;
+    --secondaryBackground: #e0e0e0;
+    --text: #000;
+    --purple: #6a1b9a;
+    --teal: #00796b;
+  }
+  
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: "Poppins", serif;font-weight: 400;
+ font-style: normal;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#logo {
+  width: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 12px auto 0 auto;
+    max-width: 500px;
+}
+
+.details {
+    width: 100%;
+    padding: 10px;
+}
+
+
+.stats-container {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--purple);
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 90px;
+}
+
+h4{
+  margin-top: 20px;
+  font-size: 15px;
+  
+}
+
+.details p {
+  font-style: italic;
+}
+
+#progress-bar {
+    height: 10px;
+    width: 100%;
+    background-color: var(--secondaryBackground);
+    border-radius: 5px;
+    margin-top: 5px;
+    
+    
+}
+#progress {
+    
+    height: 10px;
+    background-color: var(--teal);
+    border-radius: 5px;
+    transition: all 1s ease;
+}
+
+#numbers {
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    color: white;
+}
+
+form {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    
+}
+
+input {
+    flex: 1;
+    padding: 15px;
+    background-color: var(--secondaryBackground);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    color: var(--text);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+input::placeholder {
+    font-style: italic;
+    font-size: 13px;
+    
+}
+
+button {
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+    margin-top: 3px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff80ab;
+    color: var(--text);
+    font-size: 40px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+}
+
+
+input[type="checkbox"] {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    background-color: var(--secondaryBackground); 
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
+  input[type="checkbox"]:checked {
+    background-color: var(--teal); 
+    border-color: var(--teal); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+  }
+  
+  input[type="checkbox"]:checked::before {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #fff; 
+  }
+  
+   input[type="checkbox"]:hover {
+    border-color: #888;
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: none;
+    border-color: #ff4081;
+    box-shadow: 0 0 5px rgba(255, 64, 129, 0.6);
+  }
+  
+.taskItem {
+    width: 100%;
+    display: flex;
+    background-color: var(--secondaryBackground);
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    
+
+}
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+}
+
+.completed p {
+    position: relative;
+    color: var(--teal);
+    text-decoration: line-through;
+}
+
+.taskItem img {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+
+@media (max-width: 500px) {
+  .container {
+    margin: -70px auto;
+    max-width: 95%;
+    padding: 5px;
+  }
+
+  #logo {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  .stats-container {
+      padding: 10px;
+      gap: 5px;
+  }
+
+  #numbers {
+      font-size: 30px;
+      margin-top: 20px;
+  }
+
+  h1 {
+      font-size: 25px;
+  }
+
+  p {
+      font-size: 15px;
+  }
+
+  input {
+      font-size: 15px;
+      padding: 6px;
+      height: 55px;
+  }
+
+  button {
+      padding: 8px;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+  }
+
+  #task-list {
+      gap: 15px;
+  }
+
+  .taskItem {
+      padding: 5px;
+      height: 60px;
+  }
+
+  .taskItem img {
+      height: 25px;
+      width: 25px;
+  }
+
+  #progress-bar {
+      margin-top: 8px;
+      height: 8px;
+  }
+
+  #progress {
+      height: 8px;
+  }
+  
+
+  .popup {
+    padding: 15px;
+  }
+
+.popup h2 {
+    font-size: 16px;
+  }
+
+.popup button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  
+  #footer {
+   font-size: 6px;
+  }
+}
+
+
+
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px; 
+  z-index: 1000;
+  margin-top: 20px;
+  }
+  
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 90px; 
+    height: 44px;
+  }
+  
+  .theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 44px;
+  }
+  
+  .slider .icon {
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.4s;
+  }
+  
+  .slider .sun {
+    left: 5px;
+    opacity: 0;
+  }
+  
+  .slider .moon {
+    right: 5px;
+    opacity: 1;
+  }
+  
+  input:checked + .slider .sun {
+    opacity: 1;
+  }
+  
+  input:checked + .slider .moon {
+    opacity: 0;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 36px;
+    width: 36px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%; 
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(45px); 
+  }
+  
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup {
+  background: var(--secondaryBackground);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  
+}
+
+.popup h2 {
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.popup .popup-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.popup button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup .confirm {
+  background-color:red;
+  color: white;
+  height: 45px;
+  width: 100px;
+}
+
+.popup .cancel {
+  background-color: green;
+  color: white;
+  height: 45px;
+  width: 100px;
+}
+
+footer {
+  font-size: 9px;
+  color: var(--text);
+  position: fixed;
+  padding: 10px;
+  bottom: 0;
+}
